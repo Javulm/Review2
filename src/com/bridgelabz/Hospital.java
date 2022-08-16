@@ -17,6 +17,6 @@ String HospId;
     }
 
     public void setHospId(String hospId) {
-        HospId = hospId;
+        this.HospId = hospId;
     }
 }

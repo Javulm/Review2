@@ -1,7 +1,6 @@
 package com.bridgelabz;
 
 public class Patient {
-    private final Object patientId;
     private String name;
     private int age;
     private String phoneNumber;
@@ -14,7 +13,6 @@ public class Patient {
         this.phoneNumber = phoneNumber;
         this.city= city;
         this.state=state;
-        this.patientId = IDGenerator.next();
     }
 
 
