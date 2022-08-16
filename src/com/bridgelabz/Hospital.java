@@ -1,22 +1,26 @@
 package com.bridgelabz;
 
 public class Hospital {
-String HospName;
-String HospId;
+String hospitalName;
+String hospitalId;
 
     public String getHospName() {
-        return HospName;
+        return hospitalName;
     }
 
-    public void setHospName(String hospName) {
-        HospName = hospName;
+    public void setHospitalName(String hospitalName) {
+        hospitalName = hospitalName;
     }
 
-    public String getHospId() {
-        return HospId;
+    public String getHospitalId() {
+        return hospitalId;
     }
 
-    public void setHospId(String hospId) {
-        this.HospId = hospId;
+    public void setHospitalId(String hospitalId) {
+        this.hospitalId = hospitalId;
+    }
+    void hospitalDetails(String hospitalName, String hospitalId){
+        this.hospitalId=hospitalId;
+        this.hospitalName=hospitalName;
     }
 }

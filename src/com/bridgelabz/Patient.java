@@ -7,15 +7,6 @@ public class Patient {
     private String city;
     private String state;
 
-    public Patient(String name, int age, String phoneNumber, String city, String state) {
-        this.name = name;
-        this.age = age;
-        this.phoneNumber = phoneNumber;
-        this.city= city;
-        this.state=state;
-    }
-
-
     public String getName() {
         return name;
     }
@@ -55,4 +46,16 @@ public class Patient {
     public void setState(String state) {
         this.state = state;
     }
+    void patientDetails(){
+        System.out.println(name);
+        System.out.println(age);
+        System.out.println(phoneNumber);
+        System.out.println(city);
+        System.out.println(state);
+    }
+    public String toString() {
+        return "name='" + name + '\'' +
+                ", age=" + age + ", " + "Phonenumber=" + phoneNumber+ ", " + "City=" + city + ", " + "State=" + state ;
+    }
 }
+
