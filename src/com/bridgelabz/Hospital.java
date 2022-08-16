@@ -19,8 +19,13 @@ String hospitalId;
     public void setHospitalId(String hospitalId) {
         this.hospitalId = hospitalId;
     }
-    void hospitalDetails(String hospitalName, String hospitalId){
-        this.hospitalId=hospitalId;
-        this.hospitalName=hospitalName;
+    String hospitalDetails(){
+        System.out.println(hospitalName);
+        System.out.println(hospitalId);
+
+        public String toString(){
+            return "Hospital Name=" + hospitalName + ", " + "Hospital Id=" + hospitalId;
+        }
+
     }
 }
