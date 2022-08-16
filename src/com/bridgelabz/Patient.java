@@ -46,16 +46,9 @@ public class Patient {
     public void setState(String state) {
         this.state = state;
     }
-    void patientDetails(){
-        System.out.println(name);
-        System.out.println(age);
-        System.out.println(phoneNumber);
-        System.out.println(city);
-        System.out.println(state);
-    }
     public String toString() {
         return "name='" + name + '\'' +
-                ", age=" + age + ", " + "Phonenumber=" + phoneNumber+ ", " + "City=" + city + ", " + "State=" + state ;
+                ", age=" + age + ", " + "Phone number=" + phoneNumber+ ", " + "City=" + city + ", " + "State=" + state ;
     }
 }
 

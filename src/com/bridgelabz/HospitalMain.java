@@ -1,21 +1,92 @@
 package com.bridgelabz;
-
+import java.util.ArrayList;
+import java.util.Scanner;
 public class HospitalMain {
+    ArrayList<Patient> patientDetails = new ArrayList();
+    static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        System.out.println("Welcome to hospital management system");
-        System.out.println("patient details:");
-        Patient patient1 = new Patient();
-        patient1.setName("abc");
-        patient1.setAge(20);
-        patient1.setCity("belgaum");
-        patient1.setState("Karnataka");
-        patient1.setPhoneNumber("987654321");
-        patient1.patientDetails();
+        System.out.println("Welcome to Hospital management system.");
+        int i = 0;
+        HospitalMain patient = new HospitalMain();
+        while (i == 0) {
+            System.out.println("Select any option");
+            System.out.println("1.Add details.\n2.Edit details. \n3.Show Patient Details. \n4.Delete details");
+            int choose = sc.nextInt();
+            switch (choose) {
+                case 1:
+                    patient.addPatientDetails();
+                    break;
+                case 2:
+                    patient.editPatientDetails();
+                    break;
+                 case 3:
+                    patient.showPatientDetails();
+                    break;
+                default:
+                    i = 1;
+                    System.out.println("Wrong option");
+                    break;
+            }
+        }
+    }
+    public void addPatientDetails () {
+            Patient patients = new Patient();
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Enter the First Name of patient:");
+            patients.setName(sc.next());
+            System.out.println("Enter the Age:");
+            patients.setAge(sc.nextInt());
+            System.out.println("Enter the Phone number:");
+            patients.setPhoneNumber(sc.next());
+            System.out.println("Enter the City:");
+            patients.setCity(sc.next());
+            System.out.println("Enter the State:");
+            patients.setState(sc.next());
+            patientDetails.add(patients);
+            System.out.println(patients.toString());
+        }
+    public void editPatientDetails() {
+        System.out.println("To edit enter your first name:");
+        String name = sc.next();
 
-        System.out.println("hospital details:");
-        Hospital hospital1=new Hospital();
-        hospital1.setHospitalName("Govt hospital");
-        hospital1.setHospitalId("1234");
+        for (int i = 0; i < patientDetails.size(); i++) {
+            if (patientDetails.get(i).getName().equals(name)) {
+                System.out.println("Select number to change:");
+                System.out.println("\n1.first name\n2.age\n3.Phone number\n4.city\n5.State\n");
+                int edit = sc.nextInt();
+
+                switch (edit) {
+                    case 1:
+                        System.out.println("Enter your name");
+                        patientDetails.get(i).setName(sc.next());
+                        break;
+                    case 2:
+                        System.out.println("Enter your age");
+                        patientDetails.get(i).setAge(sc.nextInt());
+                    case 3:
+                        System.out.println("Enter phone number");
+                        patientDetails.get(i).setPhoneNumber(sc.next());
+                        break;
+                    case 4:
+                        System.out.println("Enter city");
+                        patientDetails.get(i).setCity(sc.next());
+                        break;
+                    case 5:
+                        System.out.println("Enter state");
+                        patientDetails.get(i).setState(sc.next());
+                        break;
+                }
+                System.out.println(patientDetails);
+            } else
+                System.out.println("Please Enter correct First name");
+        }
+
+    }
+
+        public void showPatientDetails() {
+            for (Patient c : patientDetails) {
+                System.out.println(c);
+        }
     }
 }
