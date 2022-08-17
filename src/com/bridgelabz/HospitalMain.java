@@ -1,8 +1,20 @@
 package com.bridgelabz;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 public class HospitalMain {
     ArrayList<Patient> patientDetails = new ArrayList();
+    Hospital hospital1 = new Hospital("Govt Hospital", "Belgaum","Karnataka", Department.CARDIOLOGY);
+    Hospital hospital2 = new Hospital("Apollo Hospital", "Belgaum","Karnataka", Department.ONCOLOGY);
+    Hospital hospital3 = new Hospital("Medicare Hospital", "Belgaum","Karnataka", Department.GYNOCOLOGY);
+    Hospital hospital4 = new Hospital("Joseph Hospital", "Belgaum","Karnataka", Department.NEUROLOGY);
+   map<Object, ArrayList<patientsDetails>> hospitals = new HashMap<Object,ArrayList<patientsDetails>>();
+        hospitals.put(hospital1, patientDetails);
+        hospitals.put(hospital2, patientDetails);
+        hospitals.put(hospital3, patientDetails);
+        hospitals.put(hospital4, patientDetails);
+
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -20,7 +32,7 @@ public class HospitalMain {
                 case 2:
                     patient.editPatientDetails();
                     break;
-                 case 3:
+                case 3:
                     patient.showPatientDetails();
                     break;
                 default:
@@ -31,21 +43,21 @@ public class HospitalMain {
         }
     }
     public void addPatientDetails () {
-            Patient patients = new Patient();
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Enter the First Name of patient:");
-            patients.setName(sc.next());
-            System.out.println("Enter the Age:");
-            patients.setAge(sc.nextInt());
-            System.out.println("Enter the Phone number:");
-            patients.setPhoneNumber(sc.next());
-            System.out.println("Enter the City:");
-            patients.setCity(sc.next());
-            System.out.println("Enter the State:");
-            patients.setState(sc.next());
-            patientDetails.add(patients);
-            System.out.println(patients.toString());
-        }
+        Patient patients = new Patient();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the First Name of patient:");
+        patients.setName(sc.next());
+        System.out.println("Enter the Age:");
+        patients.setAge(sc.nextInt());
+        System.out.println("Enter the Phone number:");
+        patients.setPhoneNumber(sc.next());
+        System.out.println("Enter the City:");
+        patients.setCity(sc.next());
+        System.out.println("Enter the State:");
+        patients.setState(sc.next());
+        patientDetails.add(patients);
+        System.out.println(patients.toString());
+    }
     public void editPatientDetails() {
         System.out.println("To edit enter your first name:");
         String name = sc.next();
@@ -84,9 +96,9 @@ public class HospitalMain {
 
     }
 
-        public void showPatientDetails() {
-            for (Patient c : patientDetails) {
-                System.out.println(c);
+    public void showPatientDetails() {
+        for (Patient c : patientDetails) {
+            System.out.println(c);
         }
     }
 }
